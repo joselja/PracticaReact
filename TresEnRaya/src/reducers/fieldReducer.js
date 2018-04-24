@@ -34,7 +34,7 @@ export default (state = defaultFieldState, action) => {
 			}
 
 		case PHASE_CHECK:
-			// check row
+			// chequear filas
 			for (let i = 0; i < state.field.length; i++) {
 				if (state.field[action.x][i] !== action.sign)
 					break;
@@ -45,7 +45,7 @@ export default (state = defaultFieldState, action) => {
 					}
 				}
 			}
-			// check col
+			// chequear columnas
 			for (let i = 0; i < state.field.length; i++) {
 				if (state.field[i][action.y] !== action.sign)
 					break;
@@ -56,7 +56,7 @@ export default (state = defaultFieldState, action) => {
 					}
 				}
 			}
-			// check diag
+			// chequear diagonal
 			if (action.x === action.y){
 				for (let i = 0; i < state.field.length; i++){
 					if (state.field[i][i] != action.sign)
@@ -69,7 +69,7 @@ export default (state = defaultFieldState, action) => {
 					}
 				}
 			}
-			// check reverse diag
+			// chequear diagonal inversa
 			for (let i = 0; i < state.field.length; i++){
 				if (state.field[i][(state.field.length - 1) - i] != action.sign)
 					break;
